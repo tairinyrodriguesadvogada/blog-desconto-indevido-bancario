@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin — Blog Adicionais Trabalhistas</title>
+<title>Admin — Blog Desconto Indevido Bancário</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:'Segoe UI',sans-serif;background:#f5f0ea;color:#2d1a00;min-height:100vh}
@@ -74,7 +74,7 @@ header span{font-size:13px;color:#ffd0a0;background:rgba(255,255,255,.1);padding
 
 <header>
   <div>
-    <h1>⚖️ Admin — Blog Adicionais Trabalhistas</h1>
+    <h1>⚖️ Admin — Blog Desconto Indevido Bancário</h1>
   </div>
   <span>Dra. Tairiny Rodrigues · OAB/DF 87.023</span>
 </header>
@@ -237,7 +237,7 @@ header span{font-size:13px;color:#ffd0a0;background:rgba(255,255,255,.1);padding
   </div>
 
   <div class="card">
-    <h2>📁 Repositório do Blog Trabalhista</h2>
+    <h2>📁 Repositório do Blog</h2>
     <div class="field-row">
       <div class="field">
         <label>Usuário/Organização GitHub</label>
@@ -245,7 +245,7 @@ header span{font-size:13px;color:#ffd0a0;background:rgba(255,255,255,.1);padding
       </div>
       <div class="field">
         <label>Nome do Repositório</label>
-        <input type="text" id="cfg-repo" placeholder="ex: blog-trabalhista">
+        <input type="text" id="cfg-repo" placeholder="ex: blog-desconto-indevido-bancario">
       </div>
     </div>
     <div class="field-row">
@@ -489,7 +489,7 @@ async function salvarConfig() {
   var tokenEnc = await encriptarToken(token, senha);
 
   var dados = { tokenEnc: tokenEnc, owner: owner, repo: repo, branch: branch, path: path };
-  localStorage.setItem('blog_trabalhista_cfg', JSON.stringify(dados));
+  localStorage.setItem('blog_bancario_cfg', JSON.stringify(dados));
 
   cfg = { token: token, owner: owner, repo: repo, branch: branch, path: path };
   document.getElementById('cfg-token').value = '';
@@ -499,7 +499,7 @@ async function salvarConfig() {
 }
 
 async function carregarCfg() {
-  var saved = localStorage.getItem('blog_trabalhista_cfg');
+  var saved = localStorage.getItem('blog_bancario_cfg');
   if (!saved) return;
   var dados = JSON.parse(saved);
   document.getElementById('cfg-owner').value  = dados.owner  || '';
@@ -512,7 +512,7 @@ async function carregarCfg() {
 }
 
 async function desbloquearToken() {
-  var saved = localStorage.getItem('blog_trabalhista_cfg');
+  var saved = localStorage.getItem('blog_bancario_cfg');
   if (!saved) return null;
   var dados = JSON.parse(saved);
   if (!dados.tokenEnc) return null;
